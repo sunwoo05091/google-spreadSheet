@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/check" method='post'>
+        <select id="selected" name="selected">
+            <option>시트 선택</option>
+        <input type="submit" value="선택">
+    </form>
+</body>
+<script>
+    let sheetID = ['15ci4qvWgF1SE_9EmHRNLrFKdZC06xZRzvo6xNi2T2lA', '1h8enY_zOwImhRob6YcNDqZJxPA5YCvSSIDXjd1NC4mc','1KajHTKsGEK8VbhMIGNRQUtwXL5tWr5HUKFcBeUSbtmg']; 
+    let sheetList = [1,2,3];
+    let sheet = "";
+    let OPTION = "";
+    const SELECT = document.getElementById('selected');
+         sheetList.forEach((id, idx) => {
+            OPTION = document.createElement('option');
+            OPTION.value =sheetID[idx];
+            OPTION.innerText = `${idx + 1}번째 시트`;
+            OPTION.id = `sheet${idx + 1}`;
+            SELECT.appendChild(OPTION);
+         });   
+</script>
+</html>
