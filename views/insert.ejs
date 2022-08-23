@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <form action="/append" method="post">
+        <div>
+            <label for="이름">이름</label>
+            <input type="text" name="Name">
+        </div>
+        <div></div>
+            <label for="나이">나이</label>
+            <input type="text" name="Age">
+        </div>
+        <div>
+            <label for="성별">성별</label>
+            <select name="Gendar">
+                <option value="">선택</option>
+                <option value="남자">남자</option>
+                <option value="여자">여자</option>
+            </select>
+        </div>
+        <div>
+            <label for="주소">주소</label>
+            <input type="text" name="Address">
+        </div>
+        <div>
+            <label for="메모">Memo</label>
+            <textarea name="Memo" rows="20" cols="20"></textarea>
+        </div>
+        <div>
+        <input type="submit" value="전송"></button>
+        <div>
+        </form>
+
+        <form action="/delete" method="post">
+            <input type="text" name="name">
+            <button type="submit">삭제</button>
+        </form>
+
+        <form action="/deleteSheet" method="get"> 
+            <input type="submit" value="시트 삭제" id="click">
+        </form>
+    
+        <form action="addSheet" method="post">
+            <input type="text" name="title">
+            <button type="submit">시트추가</button>
+        </form>
+    
+        <form action="new" method="post">
+            <input type="text" name="title">
+            <button type="submit">시트생성</button>
+        </form> 
+</body>
+</html>

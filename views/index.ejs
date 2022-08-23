@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/selected" method="post"> 
+        <select id="selected" name="selected">
+            <option>선택</option>
+        </select>
+        <input type="submit" value="이동" id="click">
+    </form>
+
+
+
+</body>
+<script>
+    
+    const getTitle = '<%= result %>';
+    const getSheetID = '<%= sheetID %>';
+    let OPTION = "";
+
+    const test = JSON.stringify(getTitle);
+    const test2 = JSON.stringify(getSheetID);
+
+    const title = test.substring(1,test.length);
+
+    const sheetList = title.split(",");
+    const sheetIdList = test2.split(",");
+
+    sheetList.splice(-1,1);
+
+    const SELECT = document.getElementById('selected');
+
+    sheetList.forEach((id, idx) => {
+      OPTION = document.createElement('option');
+      OPTION.value = sheetList[idx] + "," +sheetIdList[idx];
+      OPTION.innerText = sheetList[idx];
+      OPTION.id = `sheet${idx + 1}`;
+      SELECT.appendChild(OPTION);
+         });  
+    
+    
+
+</script>
+</html>
